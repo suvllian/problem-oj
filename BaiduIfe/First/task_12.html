@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>baidu IFE stage_1 task_12</title>
+    <style type="text/css">
+        *{
+    margin: 0;
+    padding: 0;
+}
+.table_mark td{
+    color: red;
+}
+.table_rank th{
+    background-color: #000;
+    color: #fff;
+    text-align: left;
+}
+
+.table_rank tr:nth-child(odd){
+    background-color: #ccc;
+}
+.table_rank tr:nth-child(even){
+    background-color: #fff;
+}
+
+.click_change{
+    margin-top: 50px;
+    margin-left: 10px;
+    height: 22px;
+    width: 100px;
+    transition: 1s width;
+}
+
+.click_change:focus{
+    width: 200px;
+}
+
+.banner{
+    position: relative;
+    width: 300px;
+    overflow: hidden;
+    margin-top: 50px;
+}
+
+.banner_container{
+    width: 300%;
+    height: 100%;
+    position: relative;
+    left: 0;
+    transition: 0.5s left;
+    font-size: 0;
+    word-spacing: 0;
+    letter-spacing: 0;
+}
+.banner_container li{
+    display: inline-block;
+    list-style: none;
+    width: 300px;
+    height: 100px;
+}
+.banner_container li:nth-child(1){
+    background-color: #00f;
+}
+.banner_container li:nth-child(2){
+    background-color: #0f0;
+}
+.banner_container li:nth-child(3){
+    background-color: #f00;
+}
+
+.banner_controller{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.banner_controller a{
+    text-decoration: none;
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 16px;
+    background-color: rgba(155,155,155,0.9);
+    opacity: 0.5;
+    text-align: center;
+    color: #fff;
+}
+.banner_controller a:visited{
+    color: #ccc;
+}
+
+#img1:target~.banner_container{
+    left: 0
+}
+#img2:target~.banner_container{
+    left: -100%;
+}
+#img3:target~.banner_container{
+    left: -200%;
+}
+@keyframes banner_container{
+    0% {left: 0;}
+    30% {left: -100%;}
+    60% {left: -200%;}
+    100% {left: 0;}
+}
+
+    </style>
+</head>
+<body>
+    <table class="table_rank">
+        <tr>
+            <th>排名</th>
+            <th>网站</th>
+            <th>热度</th>
+        </tr>
+        <tr class="table_mark">
+            <td>1.</td>
+            <td>百度前端技术学院</td>
+            <td>13000</td>
+        </tr>
+        <tr class="table_mark">
+            <td>2.</td>
+            <td>百度前端技术学院</td>
+            <td>12000</td>
+        </tr>
+        <tr class="table_mark">
+            <td>3.</td>
+            <td>百度前端技术学院</td>
+            <td>11000</td>
+        </tr>
+        <tr>
+            <td>4.</td>
+            <td>百度前端技术学院</td>
+            <td>10000</td>
+        </tr>
+        <tr>
+            <td>5.</td>
+            <td>百度前端技术学院</td>
+            <td>9000</td>
+        </tr>
+        <tr>
+            <td>6.</td>
+            <td>百度前端技术学院</td>
+            <td>8000</td>
+        </tr>
+        <tr>
+            <td>7.</td>
+            <td>百度前端技术学院</td>
+            <td>7000</td>
+        </tr>
+        <tr>
+            <td>8.</td>
+            <td>百度前端技术学院</td>
+            <td>6000</td>
+        </tr>
+        <tr>
+            <td>9.</td>
+            <td>百度前端技术学院</td>
+            <td>5000</td>
+        </tr>
+        <tr>
+            <td>10.</td>
+            <td>百度前端技术学院</td>
+            <td>4000</td>
+        </tr>
+    </table>
+
+
+    <form action="#">
+        <input class="click_change" type="text" placeholder="点我宽度会变"/>
+    </form>
+
+    <div class="banner">
+        <span id="img1"></span>
+        <span id="img2"></span>
+        <span id="img3"></span>
+        <ul class="banner_container">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="banner_controller">
+            <a href="#img1">1</a>
+            <a href="#img2">2</a>
+            <a href="#img3">3</a>
+        </div>
+    </div>
+</body>
+</html>
