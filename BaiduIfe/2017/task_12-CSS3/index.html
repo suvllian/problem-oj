@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS3</title>
+	<meta charset="utf-8">
+
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+
+		.container{
+			width: 50%;
+			margin: 0 auto;
+			text-align: center;
+		}
+
+		table{
+			background-color: #eee;
+			width: 300px;
+			margin: 100px auto;
+		}
+
+		thead{
+			background-color: #000;
+			color:#fff;
+		}
+
+		tbody tr:nth-child(2n+1){
+			background-color: #fff;
+		}
+
+		tbody tr:nth-child(1), tbody tr:nth-child(2), tbody tr:nth-child(3){
+			color:red;
+		}
+
+		tbody tr:nth-child(2n){
+			background-color: #eee;
+		}
+
+		input{
+			margin: 10px;
+			padding: 6px;
+			height: 30px;
+			box-sizing: border-box;
+			border-radius: 3px;
+			border:1px solid #aaa;
+		}
+
+		input:focus{
+			border-color: green;
+		}
+
+		input[name="small"]{
+			width: 150px;
+		}
+
+		input[name="big"]{
+			width: 300px;			
+		}
+
+		.block{
+			position: relative;
+			width: 400px;
+			height: 200px;
+			margin: 10px auto;
+			background-color: green;
+		}
+
+		.block:last-child{
+			background-color: blue;
+		}
+
+		.blue{
+			width: 50%;
+			height: 100%;
+			float: left;
+			background-color: blue;
+		}
+
+		.number{
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			opacity: 0.3;
+		}
+
+		
+		.number span{
+			display: inline-block;
+			color: #000;
+			background-color: #fff;
+			padding: 6px 12px;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<table>
+		<caption>网站排名</caption>
+		<thead>
+			<tr>
+				<th>排名</th>
+				<th>网站</th>
+				<th>热度</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<td>data</td>
+				<td>data</td>
+				<td>data</td>
+			</tr>
+			<tr>
+				<td>data</td>
+				<td>data</td>
+				<td>data</td>
+			</tr>
+			<tr>
+				<td>data</td>
+				<td>data</td>
+				<td>data</td>
+			</tr>
+
+			<tr>
+				<td>data</td>
+				<td>data</td>
+				<td>data</td>
+			</tr>
+
+			<tr>
+				<td>data</td>
+				<td>data</td>
+				<td>data</td>
+			</tr>
+		</tbody>
+
+	</table>
+
+	<div>
+		<input type="text" name="small">
+	</div>
+	<div>
+		<input type="text" name="big">
+	</div>
+
+	<div class="block">
+		<div class="number">
+			<span>1</span>
+			<span>2</span>
+			<span>3</span>
+		</div>
+	</div>
+
+	<div class="block">
+		<div class="blue">
+			
+		</div>
+		<div class="number">
+			<span>1</span>
+			<span>2</span>
+			<span>3</span>
+		</div>
+	</div>
+
+	<div class="block">
+		<div class="number">
+			<span>1</span>
+			<span>2</span>
+			<span>3</span>
+		</div>
+	</div>
+</div>
+</body>
+</html>
