@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS3模糊</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		.container{
+			width: 500px;
+			height: 300px;
+			margin: 100px auto;
+			padding: 10px;
+			cursor: pointer;
+			position: relative;
+		}
+
+		.container img{
+			width: 100%;
+			height: 100%;
+			transition: 1s all ease;
+		}
+
+		.container:hover img{
+			filter: blur(1px);
+		}
+
+		.container:hover .content::before{
+			height: 100%;
+			visibility: visible;
+			top: 0;
+		}
+
+		.container:hover .content::after{
+			width: 100%;
+			visibility: visible;
+			left: 0;
+		}
+
+		.container:hover .content{
+			padding-top: 0px;
+			opacity: 1;
+		}
+
+		.content{
+			width: 80%;
+			height: 80%;
+			padding-top: 30px;
+			position: absolute;
+			top: 10%;
+			left: 10%;
+			z-index: 2;
+			opacity: 0;
+			display: flex;
+			color: #fff;
+			align-items: center;
+			justify-content: center;
+			letter-spacing: 2px;
+			font-size: 28px;
+			transition: 1s all ease;
+			background-image: -webkit-linear-gradient(left, #3498db, #f47920 10%, #d71345 20%, #f7acbc 30%, #ffd400 40%, #3498db 50%, #f47920 60%, #d71345 70%, #f7acbc 80%, #ffd400 90%, #3498db);
+			color: transparent;
+			background-size: 200% 100%;
+			-webkit-text-fill-color: transparent;
+			-webkit-background-clip: text;
+			-webkit-background-size: 200% 100%;
+			-webkit-animation: masked-animation 4s infinite linear;
+		}
+
+		@keyframes masked-animation {
+			0% {
+				background-position: 0 0;
+			}
+			100% {
+				background-position: -100% 0;
+			}
+		}
+
+		@-webkit-keyframes masked-animation {
+			0% {
+				background-position: 0 0;
+			}
+			100% {
+				background-position: -100% 0;
+			}
+		}
+
+		.content::before{
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 50%;
+			width: 100%;
+			height: 0;
+			border: 3px solid ghostwhite;
+			border-width: 0 3px;
+			overflow: hidden;
+			visibility: hidden;
+			transition: all .8s;
+			box-sizing: border-box;
+		}
+
+		.content::after{
+			content: '';
+			position: absolute;
+			left: 50%;
+			top: 0;
+			width: 0;
+			height: 100%;
+			border: 3px solid ghostwhite;
+			border-width: 3px 0;
+			overflow: hidden;
+			visibility: hidden;
+			transition: all .8s;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img src="http://img.alicdn.com/tps/TB11pxrKVXXXXaQXXXXXXXXXXXX-900-500.jpg" alt="css3">
+		<div class="content">
+			<h3>文字流光效果</h3>
+		</div>
+	</div>
+</body>
+</html>
