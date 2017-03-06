@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>自定义右键菜单</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		.container{
+			width: 120px;
+			border:1px solid #aaa;
+			border-radius: 3px;
+			position: fixed;
+			left: 0;
+			top: 0;
+			cursor: pointer;
+			display: none;
+			transition: 1s height width ease;
+		}
+
+		.item{
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="item">
+			<p>item1</p>
+		</div>
+		<div class="item">
+			<p>item1</p>
+		</div>
+	</div>
+<script type="text/javascript">
+	(function(){
+		var box = document.getElementsByClassName("container")[0];
+		window.addEventListener("contextmenu", showMenu);
+		window.oncontextmenu = showMenu;
+
+		window.addEventListener("click", hideMenu);
+
+		function showMenu(event) {
+			event.preventDefault();
+			var event = event || window.event,
+				clientX = event.clientX,
+				clientY = event.clientY;
+
+			box.style.left = clientX + 'px';
+			box.style.top  = clientY + 'px';
+			box.style.display  = 'block';			
+		}
+
+		function hideMenu(event) {
+			var event = event || window.event,
+				target = event.target || event.srcElement;
+			event.preventDefault();	
+
+			if (target !== box){
+				while (target.className != 'container' && target.nodeName.toLowerCase() != 'html') {
+					target = target.parentNode;
+				}
+				if (target.nodeName.toLowerCase() === 'html') {
+					box.style.display = 'none';
+				}
+			}
+		}
+	})()
+</script>
+</body>
+</html>
