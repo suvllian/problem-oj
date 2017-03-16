@@ -1,13 +1,13 @@
 import Event from './Event'
 
 class Observer {
-	constructor() {
+	constructor(data) {
 		this.data = data;
-		this.iterator(data);
+		this._iterator(data);
 		this.eventBus = new Event();
 	}
 
-	iterator(obj) {
+	_iterator(obj) {
 		let val;
 		for (let key in obj) {
 			if (obj.hasOwnProperty(key)) {
@@ -17,25 +17,26 @@ class Observer {
 					new Observer(val);
 				}
 
-				this.setGetterAndSetter(key, val);
+				this._proxy(key, val);
 			}
 		}
 	}
 
-	setGetterAndSetter(key, val) {
+	_proxy(key, val) {
 		var $this = this;
 		Object.defineProperty(this.data, key, {
 			enumerable: true,
 			configurable: true,
-			get: function() {
+			get: function proxyGetter() {
 				console.log("你访问了" + key);
 				return val;
 			},
 
-			set: function(newVal) {
+			set: function proxySetter(newVal) {
 				// 没发生变化
-				if (newVal === val) return;	
+				if (newVal === val) { return; }	
 				console.log("你设置了" + key + "为 " + newVal);
+
 				$this.eventBus.emit(key, val, newVal);
 				val = newVal;
 				if(typeof newVal === 'object'){
