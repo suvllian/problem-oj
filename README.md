@@ -1,7 +1,7 @@
 # Problem-OJ
 
-## [LeetCode](https://leetcode.com/)  
+## [LeetCode](./LeetCode/)  
 算法题  
 
-## [百度前端技术学院](http://ife.baidu.com/)  
+## [百度前端技术学院](./BaiduIfe/)  
 通过实践学前端
