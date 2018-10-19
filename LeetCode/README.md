@@ -13,3 +13,4 @@
 * [11. Container With Most Water](./11.Container-With-Most-Water.md)
 * [15. 3Sum](./15.3Sum.md)
 * [18. 4Sum](./18.4Sum.md)
+* [36. Valid Sudoku](./36.Valid-Sudoku.md)
