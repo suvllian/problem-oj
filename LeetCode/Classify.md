@@ -5,4 +5,5 @@
 * [49. Group Anagrams](./49.Group-Anagrams.md)
 
 ## Linked List
+* [2. Add Two Numbers](./02.Add-Two-Numbers.md)
 * [445. Add Two Numbers II](./445.Add-Two-Numbers-II.md)
