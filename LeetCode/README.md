@@ -18,6 +18,7 @@
 * [49. Group Anagrams](./solutions/049.Group-Anagrams.md)
 * [108. Convert Sorted Array to Binary Search Tree](./solutions/108.Convert-Sorted-Array-to-Binary-Search-Tree.md)
 * [109. Convert Sorted List to Binary Search Tree](./solutions/109.Convert-Sorted-List-to-Binary-Search-Tree.md)
+* [152. Maximum Product Subarray](./solutions/152.Maximum-Product-Subarray.md)
 * [445. Add Two Numbers II](./solutions/445.Add-Two-Numbers-II.md)
 * [553. Optimal Division](./solutions/553.Optimal-Division.md)
 * [707. Design Linked List](./solutions/707.Design-Linked-List.md)
