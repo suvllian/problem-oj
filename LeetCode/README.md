@@ -22,3 +22,4 @@
 * [445. Add Two Numbers II](./solutions/445.Add-Two-Numbers-II.md)
 * [553. Optimal Division](./solutions/553.Optimal-Division.md)
 * [707. Design Linked List](./solutions/707.Design-Linked-List.md)
+* [897. Increasing Order Search Tree](./solutions/897.Increasing-Order-Search-Tree.md)
